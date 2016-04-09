@@ -1,0 +1,1 @@
+userID 0 eventID 020160409135122 actionType 1 date 20160409 一起吃好吃的早餐吧 startTime 20160410 0049
