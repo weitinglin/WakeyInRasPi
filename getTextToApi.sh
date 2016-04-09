@@ -1,5 +1,4 @@
 #!/bin/sh
-
 for item in $(cut -d ' ' -f 5 realTimeTalk.txt)
 do
   sed -i -e '2s/\("\)\(..*\)\("\)/\1'$item'\3/g' index.php

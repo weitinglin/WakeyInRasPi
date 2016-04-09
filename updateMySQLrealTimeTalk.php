@@ -1,6 +1,6 @@
 <?php
 $userID = 0 ;
-$date = "20160408" ;
+$date = "20160409" ;
 $deleteOrNot = 0;
 //echo 'Current PHP version:'. phpversion() . "\n";
 //weitinglin , 20160229, wakey project

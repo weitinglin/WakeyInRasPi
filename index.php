@@ -1,5 +1,5 @@
 <?php
-$speech="明天你可以跟我一起早起嗎" ;  // the getTextToApi.sh will sed this line!!
+$speech="今天你有遵守約定呢" ;  // the getTextToApi.sh will sed this line!!
 //weitinglin , 20160229, wakey project
 //==========================================PHP API===========================
 //STEP 1:Connect to TTS ITRI Webservice
@@ -13,22 +13,32 @@ list($resultCode, $resultString, $resultConvertID) = $resultArray;
 //echo "resultString：".$resultString."<br/>";		//debug
 //echo "resultConvertID：".$resultConvertID."<br/>";	//debug
 //STEP 4: Wait for the TTS ITRI DB Process
-sleep(5);
- ?>
 
-<?php
 //STEP 5: Invoke Call to ConvertText
+
 $result1=$client->GetConvertStatus("weitinglin66","itritts","$resultConvertID");
 //STEP 6: Iterate through the returned string array
+$try=1;
 $resultArray1= explode("&",$result1);
-list($resultCode1, $resultString1, $statusCode1, $status1, $resultUrl1) = $resultArray1;
+while( !in_array("completed", $resultArray1 ) ){
+usleep(100000);
+$result1=$client->GetConvertStatus("weitinglin66","itritts","$resultConvertID");
+//echo "the request ".$try." times ";                   //debug
+$try++;
+//echo " empty($result1)";                              //debug
+$resultArray1= explode("&",$result1);
+}
+
+list($resultCode, $resultString, $statusCode, $status, $resultUrl) = $resultArray1;
+
 //echo "resultCovertID".$resultConvertID."<br/>";	//debug
 //echo "resultCode：".$resultCode1."<br/>";		//debug
 //echo "resultString：".$resultString1."<br/>";		//debug
 //echo "statusCode：".$statusCode1."<br/>";		//debug
 //echo "status：".$status1."<br/>";			//debug
 //STEP 7: Print out the url for downloading the .wav
-echo $resultUrl1;
+echo $resultUrl;
+
 //========================================GET DATA FROM  MYSQL==================
 //STEP 1:Connect to the mySQL
 /*$link= mysql_connect("gardenia.csie.ntu.edu.tw","wakey","wakeyteam2");
