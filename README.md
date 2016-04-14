@@ -15,5 +15,17 @@ to awake by which lovely song.
     - getTextToApi.sh 
     - getwav.sh 
     - index.php 
-    - SetAction.sh  
+    - SetAction.sh
+  
+* *Daily morning text to speech reminder
+   - DailyControl.sh
+   - DailygetTextToApi.sh
+   - Dailygetwav.sh
+   - index.php
+   - DailySetAction.sh
+   - DailySetTime.sh
 
+* *Daily morning music
+   - getMySQLmusic.php
+   - DailySetMusicAction.sh
+   - DailySetMusicTime.sh
