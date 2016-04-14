@@ -7,7 +7,7 @@ to awake by which lovely song.
 =====
 ##Project of the Smart Aging Alliance Course
 
-* *Realtime Text to Speech with the API of ITRI* 
+* **Realtime Text to Speech with the API of ITRI** 
     -  Control.sh 
       - execute all the component
     - getMySQLrealTime.sh 
@@ -17,7 +17,7 @@ to awake by which lovely song.
     - index.php 
     - SetAction.sh
   
-* *Daily morning text to speech reminder
+* **Daily morning text to speech reminder**
    - DailyControl.sh
    - DailygetTextToApi.sh
    - Dailygetwav.sh
@@ -25,7 +25,7 @@ to awake by which lovely song.
    - DailySetAction.sh
    - DailySetTime.sh
 
-* *Daily morning music
+* **Daily morning music**
    - getMySQLmusic.php
    - DailySetMusicAction.sh
    - DailySetMusicTime.sh
