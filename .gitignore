@@ -1,0 +1,15 @@
+Music/*.mp3
+wav/*.wav
+Dailywav/*.wav
+eventType01/wav/*.wav
+eventType01/recording/*.wav
+eventType02/wav/*.wav
+eventType02/recording/*.wav
+eventType03/wav/*.wav
+eventType03/recording/*.wav
+eventType04/wav/*.wav
+eventType04/recording/*.wav
+eventType05/wav/*.wav
+eventType05/recording/*.wav
+eventType06/wav/*.wav
+eventType06/recording/*.wav
