@@ -1,13 +1,10 @@
 #!/bin/sh
-#file save date
-#DateDownload=$(ls -l wav/ | cut -d ' ' -f 13 | tail -n1)
-#Hour=$(echo ${DateDownload}| cut -d ":" -f 1)
-#Min=$(echo ${DateDownload}| cut -d ":" -f 2)
-#HourPlus=0
-#MinPlus=2
-#echo ${Hour}+${HourPlus} |bc
-#echo ${Min}+${MinPlus} |bc
-#file name
+#weitinglin
+###################################################################################################
+#Name: DailySetAction.sh
+#Function:pending the file list in Dailywav/ and make a action code with file path output into DailytempSoundlist
+#         generate the play shell scripts into SetPlay/ 
+##################################################################################################
 dir="/home/pi/test/version1/Wakey_shell"
 n=$(ls -l Dailywav/*.wav |sed 's/  */ /g' |cut -d ' ' -f 9 | wc -l)
 k=$(echo ${n})
@@ -27,5 +24,7 @@ do
   touch ${dir}/SetPlay/DailySetPlay${a}.sh
   echo \#\!\/bin\/sh >> ${dir}/SetPlay/DailySetPlay${a}.sh
   cat ${dir}/DailytempSoundlist.txt| head -n ${a}| tail -n 1 >> ${dir}/SetPlay/DailySetPlay${a}.sh
+  cat ${dir}/DailytempSoundlist.txt| head -n ${a}| tail -n 1 >> ${dir}/SetPlay/DailySetPlay${a}.sh 
+  sed -i -e  '3s/omxplayer/rm/g' ${dir}/SetPlay/DailySetPlay${a}.sh
 done
 

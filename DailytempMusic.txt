@@ -1,3 +1,2 @@
-
-omxplayer /home/pi/test/version1/Wakey_shell/Music/music9.mp3
-omxplayer /home/pi/test/version1/Wakey_shell/Music/music25.mp3
+omxplayer /home/pi/test/version1/Wakey_shell/Music/music2.mp3
+omxplayer /home/pi/test/version1/Wakey_shell/Music/music18.mp3

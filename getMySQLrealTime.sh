@@ -2,7 +2,7 @@
 #echo $1
 #echo $2
 userID="0"
-date="20160408"
+date="20160409"
 
 #userID 1 date 20160329
 #modify the userID
@@ -16,5 +16,5 @@ sed -i -e '2s/[[:digit:]][[:digit:]]*/'$userID'/g' updateMySQLrealTimeTalk.php
 #modify the date in updateMySql
 sed -i -e '3s/[[:digit:]][[:digit:]]*/'$date'/g' updateMySQLrealTimeTalk.php
 
-php -f  getMySQLrealTimeTalk.php
+#php -f  getMySQLrealTimeTalk.php
 #php updateMySQLrealTimeTalk.php

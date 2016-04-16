@@ -1,1 +1,3 @@
-omxplayer /home/pi/test/version1/Wakey_shell/Dailywav/146019655810230.wav
+omxplayer /home/pi/test/version1/Wakey_shell/Dailywav/14605641467521.wav
+omxplayer /home/pi/test/version1/Wakey_shell/Dailywav/14605652746854.wav
+omxplayer /home/pi/test/version1/Wakey_shell/Dailywav/146056540930978.wav

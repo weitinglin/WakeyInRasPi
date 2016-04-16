@@ -1,2 +1,2 @@
-userID 0 eventID 020160413232705 actionType 3 date 20160414 9 startTime 20160414 0735
-userID 0 eventID 020160413235450 actionType 3 date 20160414 25 startTime 20160414 0736
+userID 0 eventID 020160413232705 actionType 3 date 20160414 2 startTime 20160414 1309
+userID 0 eventID 020160413235450 actionType 3 date 20160414 18 startTime 20160414 1310
