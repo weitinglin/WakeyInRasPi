@@ -1,3 +1,3 @@
 020160414224027224423 userID 0 eventType 5 eventID 020160414224027 actionType 2 date 20160415 http://disa.csie.ntu.edu.tw/~mengying/uploads/20160414104428.wav startTime 20160415 0654
-020160414224027224431 userID 0 eventType 5 eventID 020160414224027 actionType 1 date 20160415 今天穿紅色衣服 startTime 20160415 0654
+020160414224027224431 userID 0 eventType 5 eventID 020160414224027 actionType 1 date 20160415 今天穿紅色衣服 startTime 20160417 1614
 020160414224027224500 userID 0 eventType 5 eventID 020160414224027 actionType 3 date 20160415 17 startTime 20160415 0654

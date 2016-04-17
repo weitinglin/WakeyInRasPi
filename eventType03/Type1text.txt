@@ -1,0 +1,1 @@
+020160414221459224207 userID 0 eventType 3 eventID 020160414221459 actionType 1 date 20160415 慢慢刷牙刷乾淨 startTime 20160417 1614

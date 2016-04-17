@@ -10,6 +10,8 @@
 
 
 #rm tempSoundlist-e.txt
+current=$(pwd)
+cd ./eventType02
 for item in $( ls -l ./event/wav | sed 's/  */ /g'|cut -d " " -f 9|sed 's/.wav//g'| sed '1d')
 do
  echo omxplayer event/wav/${item}
@@ -28,4 +30,4 @@ done
 #  cat ${dir}/DailytempSoundlist.txt| head -n ${a}| tail -n 1 >> ${dir}/SetPlay/DailySetPlay${a}.sh 
 #  sed -i -e  '3s/omxplayer/rm/g' ${dir}/SetPlay/DailySetPlay${a}.sh
 #done
-
+cd ${current}

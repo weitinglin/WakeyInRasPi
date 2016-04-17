@@ -1,0 +1,1 @@
+020160414224029224518 userID 0 eventType 6 eventID 020160414224029 actionType 1 date 20160415 晚上你要做什麼 startTime 20160417 1614

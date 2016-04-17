@@ -1,6 +1,6 @@
 <?php
 $userID = 0 ;
-$date = "20160409" ;
+$date = "20160417" ;
 //echo 'Current PHP version:'. phpversion() . "\n";
 //weitinglin , 20160229, wakey project
 //==========s==============================GET DATA FROM  MYSQL==================
@@ -46,6 +46,10 @@ $result = $mysqli->query($sql);
 while($row = $result->fetch_array()) {
 echo 'userID '.$row['userID'].' '.'date'.' '.$row['date'].' '.$row['text'] . "\n" ;
 }
+
+
+$sql = "UPDATE realTimeTalk SET deleteOrNot = 0 WHERE userID = $userID AND date = $date";
+$result = $mysqli->query($sql);
 
 // echo gettype($row);
 // echo gettype($result);

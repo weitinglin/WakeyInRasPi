@@ -10,6 +10,9 @@
 #k=$(echo ${n})
 #echo "" >  ${dir}/DailytempMusic.txt
 #rm tempSoundlist-e.txt
+current=$(pwd)
+
+cd ./eventType02
 for item in $(cut -d " " -f 1 Type3music.txt)
 do
  temp=$( grep ${item} Type3music.txt | cut -d " " -f 12 )
@@ -19,6 +22,8 @@ do
  echo omxplayer ./Music/music${temp}.mp3  >> event/${item}.sh
  
 done
+
+cd ${current}
 
 #sed '1d' DailytempMusic.txt > tDailytempMusic.txt
 #rm DailytempMusic.txt
