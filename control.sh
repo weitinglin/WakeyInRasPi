@@ -4,7 +4,7 @@ while [ -n $Signal ]
 do
  A=$(php -f getMySQLrealTimeTalk.php)
  B=$(php -f getMySQLrealTimeMusic.php)
-# C=$(php -f getMySQLrealTimeMotion.php)
+#C=$(php -f getMySQLrealTimeMotion.php)
 ####################realtime text to speech################
  if [ -z $A ]
   then

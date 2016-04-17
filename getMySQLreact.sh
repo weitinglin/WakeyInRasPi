@@ -2,8 +2,8 @@
 #echo $1
 #echo $2
 userID="0"
-scheduleID="20160415"
-
+scheduleID=$(date "+%Y%m%d")
+#echo ${scheduleID}
 #userID 1 date 20160329
 #modify the userID
 sed -i -e '2s/[[:digit:]][[:digit:]]*/'$userID'/g' getMySQLreactMusic.php
