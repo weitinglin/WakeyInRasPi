@@ -14,6 +14,7 @@ do
 
     for item in $( echo ${A} | cut -d ' ' -f 5 )
     do
+      echo ${item}
       sed -i -e '2s/\("\)\(..*\)\("\)/\1'$item'\3/g' index.php
       echo "downloading the $item into the mp3"
       head -n2 index.php
@@ -34,6 +35,7 @@ do
 
     for item in $(ls wav|sed 's/.wav//g')
     do
+  
       touch ${item}.sh
       echo \#\!\/bin\/sh >> ${item}.sh 
       echo omxplayer wav/${item}.wav

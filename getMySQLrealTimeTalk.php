@@ -1,6 +1,6 @@
 <?php
 $userID = 0 ;
-$date = "20160417" ;
+$date = "20160418" ;
 //echo 'Current PHP version:'. phpversion() . "\n";
 //weitinglin , 20160229, wakey project
 //==========s==============================GET DATA FROM  MYSQL==================

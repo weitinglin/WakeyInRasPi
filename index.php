@@ -1,5 +1,5 @@
 <?php
-$speech="今天你有遵守約定呢" ;  // the getTextToApi.sh will sed this line!!
+$speech="Kiwi你和媽媽討論好明天要穿的衣服了嗎?" ;  // the getTextToApi.sh will sed this line!!
 //weitinglin , 20160229, wakey project
 //==========================================PHP API===========================
 //STEP 1:Connect to TTS ITRI Webservice
