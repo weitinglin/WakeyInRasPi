@@ -1,9 +1,9 @@
 #!/bin/sh
-#sh getMySQLreact.sh
+sh deletsh.sh
 current=$(pwd)
-
-#rm eventType.txt
-#sh getMySQLreactControl.sh |sort > eventType.txt
+sleep 1m
+rm eventType.txt
+sh getMySQLreactControl.sh |sort > eventType.txt
 
 #EventType1
 rm eventType01/eventType01.txt
@@ -18,6 +18,8 @@ rm Type2recording.txt
 cat eventType01.txt | grep "actionType 2" > Type2recording.txt
 rm Type3music.txt
 cat eventType01.txt | grep "actionType 3" > Type3music.txt
+rm Type4motion.txt
+cat eventType01.txt | grep "actionType 4" > Type4motion.txt
 
 
  #gettexttoapi.sh
@@ -39,7 +41,7 @@ do
  echo omxplayer event/wav/${item}
  touch event/${item}.sh
  echo \#\!\/bin\/sh >> ./event/${item}.sh
- echo omxplayer ./event/wav/${item}.wav >> ./event/${item}.sh
+ echo omxplayer -o local ./event/wav/${item}.wav >> ./event/${item}.sh
 done
 
  #getmusicaction.sh
@@ -50,7 +52,7 @@ do
  echo ${temp}
  touch event/${item}.sh
  echo \#\!\/bin\/sh >> event/${item}.sh
- echo omxplayer ../Music/music${temp}.mp3  >> event/${item}.sh
+ echo omxplayer -o local ../Music/music${temp}.mp3  >> event/${item}.sh
 done
 
  # getrecording.sh
@@ -61,8 +63,19 @@ do
  wget -O event/recording/${item}.wav $url
  touch event/${item}.sh
  echo \#\!\/bin\/sh >> event/${item}.sh
- echo omxplayer .event/recording/${item}.wav  >> event/${item}.sh
+ echo omxplayer -o local event/recording/${item}.wav  >> event/${item}.sh
 done
+
+ # getmotion
+for item in $(cut -d " " -f 1 Type4motion.txt)
+do
+ temp=$( grep ${item} Type4motion.txt | cut -d " " -f 12 )
+ echo ${temp}
+ touch event/${item}.sh
+ echo \#\!\/bin\/sh >> event/${item}.sh
+ echo sudo python /home/pi/Wakey/LEDMode.py ${temp}  >> event/${item}.sh
+done
+
 
  # settime
   touch event/settime.sh
@@ -96,6 +109,10 @@ rm Type2recording.txt
 cat eventType02.txt | grep "actionType 2" > Type2recording.txt
 rm Type3music.txt
 cat eventType02.txt | grep "actionType 3" > Type3music.txt
+rm Type4motion.txt
+cat eventType02.txt | grep "actionType 4" > Type4motion.txt
+
+
 
  #gettexttoapi.sh
 
@@ -116,7 +133,7 @@ do
  echo omxplayer event/wav/${item}
  touch event/${item}.sh
  echo \#\!\/bin\/sh >> ./event/${item}.sh
- echo omxplayer eventType02/event/wav/${item}.wav >> ./event/${item}.sh
+ echo omxplayer -o local eventType02/event/wav/${item}.wav >> ./event/${item}.sh
 done
 
  #getmusicaction.sh
@@ -127,8 +144,19 @@ do
  echo ${temp}
  touch event/${item}.sh
  echo \#\!\/bin\/sh >> event/${item}.sh
- echo omxplayer ./Music/music${temp}.mp3  >> event/${item}.sh
+ echo omxplayer -o local ./Music/music${temp}.mp3  >> event/${item}.sh
 done
+
+ # getmotion
+for item in $(cut -d " " -f 1 Type4motion.txt)
+do
+ temp=$( grep ${item} Type4motion.txt | cut -d " " -f 12 )
+ echo ${temp}
+ touch event/${item}.sh
+ echo \#\!\/bin\/sh >> event/${item}.sh
+ echo sudo python /home/pi/Wakey/LEDMode.py ${temp}  >> event/${item}.sh
+done
+
 
 
  # getrecording.sh
@@ -139,7 +167,7 @@ do
  wget -O event/recording/${item}.wav $url
  touch event/${item}.sh
  echo \#\!\/bin\/sh >> event/${item}.sh
- echo omxplayer ./eventType02/event/recording/${item}.wav  >> event/${item}.sh
+ echo omxplayer -o local ./eventType02/event/recording/${item}.wav  >> event/${item}.sh
 done
 cd ${current}
 
@@ -160,6 +188,9 @@ rm Type2recording.txt
 cat eventType03.txt | grep "actionType 2" > Type2recording.txt
 rm Type3music.txt
 cat eventType03.txt | grep "actionType 3" > Type3music.txt
+rm Type4motion.txt
+cat eventType03.txt | grep "actionType 4" > Type4motion.txt
+
 
  #gettexttoapi.sh
 
@@ -181,7 +212,7 @@ do
  echo omxplayer event/wav/${item}
  touch event/${item}.sh
  echo \#\!\/bin\/sh >> ./event/${item}.sh
- echo omxplayer eventType03/event/wav/${item}.wav >> ./event/${item}.sh
+ echo omxplayer -o local eventType03/event/wav/${item}.wav >> ./event/${item}.sh
 done
 
 
@@ -193,7 +224,7 @@ do
  echo ${temp}
  touch event/${item}.sh
  echo \#\!\/bin\/sh >> event/${item}.sh
- echo omxplayer ./Music/music${temp}.mp3  >> event/${item}.sh
+ echo omxplayer -o local ./Music/music${temp}.mp3  >> event/${item}.sh
 done
 
  # getrecording.sh
@@ -204,8 +235,20 @@ do
  wget -O event/recording/${item}.wav $url
  touch event/${item}.sh
  echo \#\!\/bin\/sh >> event/${item}.sh
- echo omxplayer ./eventType03/event/recording/${item}.wav  >> event/${item}.sh
+ echo omxplayer -o local ./eventType03/event/recording/${item}.wav  >> event/${item}.sh
 done
+
+ # getmotion
+for item in $(cut -d " " -f 1 Type4motion.txt)
+do
+ temp=$( grep ${item} Type4motion.txt | cut -d " " -f 12 )
+ echo ${temp}
+ touch event/${item}.sh
+ echo \#\!\/bin\/sh >> event/${item}.sh
+ echo sudo python /home/pi/Wakey/LEDMode.py ${temp}  >> event/${item}.sh
+done
+
+
 
 cd ${current}
 
@@ -224,6 +267,8 @@ rm Type2recording.txt
 cat eventType04.txt | grep "actionType 2" > Type2recording.txt
 rm Type3music.txt
 cat eventType04.txt | grep "actionType 3" > Type3music.txt
+rm Type4motion.txt
+cat eventType04.txt | grep "actionType 4" > Type4motion.txt
 
  #gettexttoapi.sh
 
@@ -245,7 +290,7 @@ do
  echo omxplayer event/wav/${item}
  touch event/${item}.sh
  echo \#\!\/bin\/sh >> ./event/${item}.sh
- echo omxplayer eventType04/event/wav/${item}.wav >> ./event/${item}.sh
+ echo omxplayer -o local eventType04/event/wav/${item}.wav >> ./event/${item}.sh
 done
 
  #getmusicaction.sh
@@ -256,7 +301,7 @@ do
  echo ${temp}
  touch event/${item}.sh
  echo \#\!\/bin\/sh >> event/${item}.sh
- echo omxplayer ./Music/music${temp}.mp3  >> event/${item}.sh
+ echo omxplayer -o local ./Music/music${temp}.mp3  >> event/${item}.sh
 done
 
  # getrecording.sh
@@ -267,8 +312,21 @@ do
  wget -O event/recording/${item}.wav $url
  touch event/${item}.sh
  echo \#\!\/bin\/sh >> event/${item}.sh
- echo omxplayer ./eventType04/event/recording/${item}.wav  >> event/${item}.sh
+ echo omxplayer -o local ./eventType04/event/recording/${item}.wav  >> event/${item}.sh
 done
+
+ # getmotion
+for item in $(cut -d " " -f 1 Type4motion.txt)
+do
+ temp=$( grep ${item} Type4motion.txt | cut -d " " -f 12 )
+ echo ${temp}
+ touch event/${item}.sh
+ echo \#\!\/bin\/sh >> event/${item}.sh
+ echo sudo python /home/pi/Wakey/LEDMode.py ${temp}  >> event/${item}.sh
+done
+
+
+
 
 cd ${current}
 
@@ -287,6 +345,9 @@ rm Type2recording.txt
 cat eventType05.txt | grep "actionType 2" > Type2recording.txt
 rm Type3music.txt
 cat eventType05.txt | grep "actionType 3" > Type3music.txt
+rm Type4motion.txt
+cat eventType05.txt | grep "actionType 4" > Type4motion.txt
+
 
  #gettexttoapi.sh
 
@@ -307,7 +368,7 @@ do
  echo omxplayer event/wav/${item}
  touch event/${item}.sh
  echo \#\!\/bin\/sh >> ./event/${item}.sh
- echo omxplayer eventType05/event/wav/${item}.wav >> ./event/${item}.sh
+ echo omxplayer -o local eventType05/event/wav/${item}.wav >> ./event/${item}.sh
 done
 
  #getmusicaction.sh
@@ -318,7 +379,7 @@ do
  echo ${temp}
  touch event/${item}.sh
  echo \#\!\/bin\/sh >> event/${item}.sh
- echo omxplayer ./Music/music${temp}.mp3  >> event/${item}.sh
+ echo omxplayer -o local ./Music/music${temp}.mp3  >> event/${item}.sh
 done
 
  # getrecording.sh
@@ -329,8 +390,20 @@ do
  wget -O event/recording/${item}.wav $url
  touch event/${item}.sh
  echo \#\!\/bin\/sh >> event/${item}.sh
- echo omxplayer ./eventType05/event/recording/${item}.wav  >> event/${item}.sh
+ echo omxplayer -o local ./eventType05/event/recording/${item}.wav  >> event/${item}.sh
 done
+
+ # getmotion
+for item in $(cut -d " " -f 1 Type4motion.txt)
+do
+ temp=$( grep ${item} Type4motion.txt | cut -d " " -f 12 )
+ echo ${temp}
+ touch event/${item}.sh
+ echo \#\!\/bin\/sh >> event/${item}.sh
+ echo sudo python /home/pi/Wakey/LEDMode.py ${temp}  >> event/${item}.sh
+done
+
+
 
 cd ${current}
 
@@ -350,6 +423,8 @@ rm Type2recording.txt
 cat eventType06.txt | grep "actionType 2" > Type2recording.txt
 rm Type3music.txt
 cat eventType06.txt | grep "actionType 3" > Type3music.txt
+rm Type4motion.txt
+cat eventType06.txt | grep "actionType 4" > Type4motion.txt
 
  #gettexttoapi.sh
 
@@ -371,7 +446,7 @@ do
  echo omxplayer event/wav/${item}
  touch event/${item}.sh
  echo \#\!\/bin\/sh >> ./event/${item}.sh
- echo omxplayer eventType06/event/wav/${item}.wav >> ./event/${item}.sh
+ echo omxplayer -o local eventType06/event/wav/${item}.wav >> ./event/${item}.sh
 done
 
  #getmusicaction.sh
@@ -382,7 +457,7 @@ do
  echo ${temp}
  touch event/${item}.sh
  echo \#\!\/bin\/sh >> event/${item}.sh
- echo omxplayer ./Music/music${temp}.mp3  >> event/${item}.sh
+ echo omxplayer -o local ./Music/music${temp}.mp3  >> event/${item}.sh
 done
 
  # getrecording.sh
@@ -393,8 +468,20 @@ do
  wget -O event/recording/${item}.wav $url
  touch event/${item}.sh
  echo \#\!\/bin\/sh >> event/${item}.sh
- echo omxplayer ./eventType06/event/recording/${item}.wav  >> event/${item}.sh
+ echo omxplayer -o local ./eventType06/event/recording/${item}.wav  >> event/${item}.sh
 done
+
+ # getmotion
+for item in $(cut -d " " -f 1 Type4motion.txt)
+do
+ temp=$( grep ${item} Type4motion.txt | cut -d " " -f 12 )
+ echo ${temp}
+ touch event/${item}.sh
+ echo \#\!\/bin\/sh >> event/${item}.sh
+ echo sudo python /home/pi/Wakey/LEDMode.py ${temp}  >> event/${item}.sh
+done
+
+
 
 cd ${current}
 
